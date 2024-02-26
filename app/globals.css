@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+@layer components {
+  .Topbar {
+    @apply w-full h-12 bg-slate-900;
+  }
+  .Leftbar {
+    @apply w-1/5 h-screen bg-slate-900;
+  }
+  .Rightbar {
+    @apply w-9/12 mt-5 h-screen;
+  }
+  .LeftNav {
+    @apply py-8;
+  }
+  .cardTemplate {
+    @apply w-5/6 rounded-lg m-6 h-12 text-center flex items-center justify-self-auto pl-6 space-x-4;
+  }
+  .HomeProfile {
+    @apply items-center justify-center h-screen;
+  }
+  .Intro {
+    @apply bg-slate-900 h-52 ml-24 w-5/6 flex flex-row rounded-3xl mb-14;
+  }
+  .IntroHeading {
+    @apply p-8;
+  }
+  .Upcoming {
+    @apply ml-24 w-2/4;
+  }
+  .UpcomingHeading {
+    @apply border-b-2 border-white border-solid pr-10 flex justify-between mb-10;
+  }
+  .Upcoming-heading {
+    @apply font-semibold text-2xl p-3;
+  }
+  .Upcoming-Boxes {
+    @apply flex flex-row ml-2;
+  }
+  .Upcoming-box {
+    @apply h-72 w-3/6 bg-slate-900 rounded-3xl mr-5 text-center justify-center items-center pt-8;
+  }
+  .Attendance-Type {
+    @apply p-3 font-bold text-xl rounded-xl;
+  }
+}
